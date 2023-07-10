@@ -1,11 +1,11 @@
 {
-  "name": "Shop",
+  "name":"Shop",
   "version": "1.0.0",
   "description": "Shopping Project",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js",
+    "start": "nodemon app.js",
     "start-server": "node app.js"
   },
   "devDependencies": {
