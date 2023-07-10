@@ -1,0 +1,25 @@
+<%- include('../includes/head.ejs') %>
+</head>
+<body>
+    <%- include('../includes/navigation.ejs') %>
+    <main class="centered">
+        <h1><%= product.title%></h1>
+        <hr>
+        <div>
+
+            <img src="/<%= product.ImageURL %>" alt="<%=product.title%>" style="width:25%; height:25%;">
+        </div>
+        <h1>up to <%= product.discount %>% off</h1>
+        <h1>$<%= product.Price %></h1>
+        <p><%= product.description %></p>
+        <p><%= product.freedelivery %></p>
+       
+            <% if(isAuthenticated) {%>
+                <form action="/cart" method="POST">
+                    <button class="btn" type="submit">Add TO Cart</button>
+                    <input type="hidden" value="<%= csrfToken%>" name="_csrf">
+                    <input type="hidden" name="productId" value="<%= product._id %>">
+                </form>
+                <% } %>
+    </main>
+    <%- include('../includes/end.ejs') %>

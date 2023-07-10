@@ -1,0 +1,52 @@
+/* body {
+    font: normal 100%/1.15 "Merriweather", serif;
+    background-color: #7ed0f2;
+    color: #fff;
+  } */
+  
+  .wrapper {
+    position: relative;
+    max-width: 1298px;
+    height: auto;
+    margin: 2em auto 0 auto;
+   
+    color: #fff;
+  }
+  
+ 
+  .box {
+    max-width: 70%;
+    min-height: auto;
+    margin: 0 auto;
+    padding: 1em 1em;
+    text-align: center;
+    background: url("https://www.dropbox.com/s/xq0841cp3icnuqd/flame.png?raw=1") no-repeat top 4em center/128px 128px,
+                transparent url("/images/500.avif") no-repeat top 10em center/228px 228px;
+  }
+  
+  #hhh, #ppp:not(:last-of-type) { 
+    text-shadow: 0 0 6px #216f79;
+ }
+  
+  #hhh {
+    margin: 0 0 1rem 0;
+    font-size: 8em;
+  }
+  
+  #ppp {
+    margin-bottom: 0.5em;
+    font-size: 3em;
+  }
+  
+  #ppp:first-of-type { margin-top: 4em; }
+  
+  #ppp > a {
+    border-bottom: 1px dashed #216f79;
+    font-style: italic;
+    text-decoration: none;
+    color: #216f79;
+  }
+  
+  #ppp > a:hover { text-shadow: 0 0 6px #216f79; }
+  
+  #ppp img { vertical-align: bottom; }

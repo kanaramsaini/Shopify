@@ -1,0 +1,32 @@
+<%- include('../includes/head.ejs') %>
+<link rel="stylesheet" href="/css/orders.css">
+<link rel="stylesheet" href="/css/orderError.css">
+</head>
+<body>
+    <%- include('../includes/navigation.ejs') %>
+    <main>
+        <% if(orders.length<=0){%>
+            <div class="wrapper">
+                <div class="box">
+                    <h2 id="hhh"> Order not found</h2>
+
+                    <p id="ppp"><a href="/">shoping Now</a></p>
+                </div>
+                </div>
+        <%}else {%>
+            <ul class="orders">
+                <%orders.forEach(order=>{%>
+                    <li class="orders__item">
+                        <h2>Order => # <%= order._id %> - <a href="/orders/<%=order._id%>">Invoice</a></h2>
+                        <ul class='orders__products'>
+                            <% order.products.forEach(p => { %>
+                                <li class="orders_products-item"><%= p.product.title %> (<%= p.quantity %>)</li>
+                            <% }); %>
+                        </ul>
+                    </li>
+                    <%});%>
+            </ul>
+        <%}%>
+    </main>
+    <%- include('../includes/end.ejs') %>
+

@@ -1,0 +1,57 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/forms.css">
+    <link rel="stylesheet" href="/css/product.css">
+</head>
+
+<body>
+   <%- include('../includes/navigation.ejs') %>
+    
+    <main>
+        <% if( errorMessage){%>
+            <div class="user-message erro-user-message">
+                <%=  errorMessage %>
+            </div>
+            <% } %>
+        <form class="product-form" action="/admin/<%if(editing){%>edit-product <%}else{%>add-product <%}%>" method="POST" enctype="multipart/form-data">
+            <div class="form-control">
+                <label for="title">Title</label>
+                <input 
+                class="<%= validationErrors.find(t => t.path === 'title')? 'invalid':''%>"
+                type="text" name="title" id="title" value="<%if(editing || hasError){%><%= product.title %> <%}%>">
+            </div>
+            <div class="form-control">
+                <label for="ImageURL">ImageURL</label>
+                <input type="file" name="image" id="image" >
+            </div>
+            <div class="form-control">
+                <label for="Price">Price</label>
+                <input
+                class="<%= validationErrors.find(p => p.path === 'Price')? 'invalid':''%>" 
+                type="number" name="Price" id="Price" step="0.01" value="<%if(editing || hasError){%><%=product.Price %> <%}%>">
+            </div>
+            <div class="form-control">
+                <label for="discount">Discount</label>
+                <input
+                class="<%= validationErrors.find(d => d.path === 'discount')? 'invalid':''%>"
+                 type="number" name="discount" id="discount" value="<%if(editing || hasError){%><%= product.discount %> <%}%>">
+            </div>
+            <div class="form-control">
+                <label for="description">Description</label>
+                <textarea 
+                class="<%= validationErrors.find(des => des.path === 'description')? 'invalid':''%>"
+                name="description" id="description" rows="4"><%if(editing || hasError){%> <%=product.description %> <%}%> </textarea>
+            </div>
+            <div class="form-control">
+                <label for="freedelivery">Delivery Type</label>
+                <input 
+                class="<%= validationErrors.find(fd => fd.path === 'freedelivery')? 'invalid':''%>"
+                type="text" name="freedelivery" id="freedelivery" value="<%if(editing || hasError){%><%= product.freedelivery %> <%}%>">
+            </div>
+            <% if (editing) { %>
+                <input type="hidden" value="<%= product._id %>" name="productId">
+            <% } %>
+            <input type="hidden" value="<%= csrfToken%>" name="_csrf">
+            <button class="btn" type="submit"><%if(editing){%> updated Product <%}else{%> Add Product <%}%></button>
+        </form>
+    </main>
+<%- include('../includes/end.ejs') %>

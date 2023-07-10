@@ -1,0 +1,93 @@
+
+  
+  .wrapper {
+    position: relative;
+    max-width: 1298px;
+    height: auto;
+    margin: 2em auto 0 auto;
+   
+    color: #fff;
+  }
+  
+ 
+  .box {
+    max-width: 70%;
+    min-height: auto;
+    margin: 0 auto;
+    padding: 1em 1em;
+    text-align: center;
+    background: url("https://www.dropbox.com/s/xq0841cp3icnuqd/flame.png?raw=") no-repeat top 4em center/128px 128px,
+                transparent url("/images/cartEmpty.avif") no-repeat top 4em center/228px 328px;
+  }
+  
+  
+  #hhh, #ppp:not(:last-of-type) { 
+    text-shadow: 0 0 6px #216f79;
+ }
+  
+  #hhh {
+    margin: 0 0 1rem 0;
+    font-size: 8em;
+  }
+  
+  #ppp {
+    margin-bottom: 0.5em;
+    font-size: 3em;
+  }
+  
+  #ppp:first-of-type { margin-top: 4em; }
+  
+  #ppp > a {
+    border-bottom: 1px dashed #216f79;
+    font-style: italic;
+    text-decoration: none;
+    color: #216f79;
+  }
+  
+  #ppp > a:hover { text-shadow: 0 0 6px #216f79; }
+  
+  #ppp img { vertical-align: bottom; }
+
+
+
+  @media screen and (max-width: 576px) {
+  
+    .wrapper {
+      position: relative;
+     width: 60%;
+      height: auto;
+      margin:25% 4%;
+     
+      color: #fff;
+    }
+    #hhh {
+      margin: 0 0 0.5rem 0;
+      font-size: 2.5em;
+    }
+    #ppp {
+      margin-bottom: 0.5em;
+      font-size: 1em;
+    }
+    #ppp:first-of-type { margin-top: 1em; }
+  }
+
+  @media screen and (max-width: 768px) {
+  
+    .wrapper {
+      position: relative;
+     width: 60%;
+      height: auto;
+      margin:25% 4%;
+     
+      color: #fff;
+    }
+    #hhh {
+      margin: 0 0 0.5rem 0;
+      font-size: 2.5em;
+    }
+    #ppp {
+      margin-bottom: 0.5em;
+      font-size: 1em;
+    }
+    #ppp:first-of-type { margin-top: 1em; }
+  }
